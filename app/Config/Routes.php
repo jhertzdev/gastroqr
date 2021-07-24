@@ -34,6 +34,16 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+$routes->group('api', ['namespace' => '\App\Controllers\API'], function($routes) {
+	
+	$routes->get('address', 'Address::index');
+	$routes->post('address/create', 'Address::create');
+	$routes->get('address/edit/(:num)', 'Address::edit/$1');
+	$routes->post('address/update/(:num)', 'Address::update/$1');
+	$routes->delete('address/delete/(:num)', 'Address::delete/$1');
+
+});
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

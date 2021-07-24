@@ -24,6 +24,7 @@ class Validation
 		FormatRules::class,
 		FileRules::class,
 		CreditCardRules::class,
+		CustomValidation::class,
 		\Myth\Auth\Authentication\Passwords\ValidationRules::class,
 	];
 
